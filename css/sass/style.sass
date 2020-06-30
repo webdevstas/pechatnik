@@ -1,0 +1,95 @@
+@font-face
+    font-family: "ProbaPro"
+    src: url(/css/fonts/ProbaPro-Regular.ttf) format("truetype")
+@font-face
+    font-family: "ProximaNovaReg"
+    src: url(/css/fonts/ProximaNova-Regular.ttf) format("truetype")
+@font-face
+    font-family: "ProximaNovaBld"
+    src: url(/css/fonts/ProximaNova-Bold.ttf) format("truetype")
+@font-face
+    font-family: "ProximaNovaLight"
+    src: url(/css/fonts/ProximaNova-Light.ttf) format("truetype")
+@font-face
+    font-family: "ProximaNovaThin"
+    src: url(/css/fonts/ProximaNovaT-Thin.ttf) format("truetype")
+@font-face
+    font-family: "ProximaNovaExtraBld"
+    src: url(/css/fonts/ProximaNova-Extrabld.ttf) format("truetype")
+body
+    font-family: ProximaNovaReg
+    margin: 0
+    padding: 0
+.main-bg__block
+    background: url("/img/main-bg.png") no-repeat
+    background-size: cover
+    height: 2500px
+    width: 100%
+    position: relative
+    z-index: 15
+header
+    height: 93px
+    position: relative
+    z-index: 20
+    display: block
+.header
+    &-logo
+        height: 93px
+        display: flex
+        align-items: center
+        & a
+            width: 100%
+            text-align: center
+    &-logo__img
+        height: 73px
+        width: auto
+    &-col__block
+        display: flex
+        flex-direction: row
+        justify-content: center
+        align-items: center
+        min-height: 50px
+        &__icon
+            height: 24px
+            display: block
+            width: auto
+            margin-right: 5px
+        &__cta
+            display: block
+            position: relative
+            text-align: center
+.content-area
+    position: relative
+    z-index: 15
+.top-menu
+    padding-top: 2px
+    &__list
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: space-between
+        list-style: none
+        &__item
+            &__link
+                color: #ffffff
+                text-transform: uppercase
+                text-decoration: none
+                font-size: 14px
+                font-weight: bold
+#scene
+    width: 100%
+.first-screen
+    &__patallax__container
+        &_first__layer
+            
+        &_second__layer
+
+        &_third__layer
+    &__h1
+        color: #ffff
+        font-size: 56px
+        font-family: ProximaNovaExtraBld
+    &__offer
+        color: #ffff
+        font-size: 24px
+        font-family: ProximaNovaThin
