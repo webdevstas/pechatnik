@@ -47,6 +47,13 @@ body {
   font-family: ProximaNovaBld;
 }
 
+.no-select {
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
+
 header {
   height: 93px;
   position: relative;
