@@ -29,10 +29,9 @@
 }
 
 body {
-  font-family: ProximaNovaReg;
+  font-family: "ProximaNovaReg";
   margin: 0;
   padding: 0;
-  cursor: url("/cssontsnormal_select.cur");
 }
 
 .main-bg__block {
@@ -60,6 +59,8 @@ header {
   position: relative;
   z-index: 20;
   display: block;
+  font-family: "ProximaNovaReg";
+  font-size: 12px;
 }
 
 .header-logo {
@@ -153,13 +154,13 @@ header {
 .first-screen__h1 {
   color: #ffff;
   font-size: 56px;
-  font-family: ProximaNovaExtraBld;
+  font-family: "ProximaNovaExtraBld";
 }
 
 .first-screen__offer {
   color: #ffff;
   font-size: 24px;
-  font-family: ProximaNovaThin;
+  font-family: "ProximaNovaThin";
 }
 
 .first-screen__arrow {
@@ -168,7 +169,7 @@ header {
 }
 
 .form__section-title__block__title {
-  font-family: ProximaNovaLight;
+  font-family: "ProximaNovaLight";
   font-size: 24px;
 }
 /*# sourceMappingURL=style.css.map */
