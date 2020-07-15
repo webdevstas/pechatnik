@@ -95,6 +95,10 @@ body {
   font-size: 36px;
 }
 
+.section__title-wrap {
+  margin-bottom: 50px;
+}
+
 .section__title-bordered {
   display: block;
 }
@@ -209,6 +213,10 @@ header {
 
 #scene {
   width: 100%;
+}
+
+.first-screen {
+  min-height: 500px;
 }
 
 .first-screen__h1 {
