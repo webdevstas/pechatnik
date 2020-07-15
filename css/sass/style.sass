@@ -20,6 +20,17 @@ body
     font-family: "ProximaNovaReg"
     margin: 0
     padding: 0
+    font-size: 14px
+.bold
+    font-family: "ProximaNovaBld"
+.extra-bold
+    font-family: "ProximaNovaExtraBld"
+.light
+    font-family: "ProximaNovaLight"
+.thin
+    font-family: "ProximaNovaThin"
+.regular
+    font-family: "ProximaNovaReg"
 .main-bg__block
     background: url("../img/main-bg.png") no-repeat
     background-size: cover
@@ -28,12 +39,28 @@ body
     position: relative
     z-index: 15
 .bold
-    font-family: ProximaNovaBld
+    font-family: "ProximaNovaBld"
 .no-select
     -ms-user-select: none
     -moz-user-select: none
     -khtml-user-select: none
     -webkit-user-select: none
+.horizontal-flex
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+.section__title
+    font-size: 36px
+    &-bordered
+        display: block
+    &::after
+        content: '_____'
+        font-family: "ProximaNovaExtraBld"
+        display: block
+        color: #bb23af
+    &-descr
+        font-size: 16px        
 header
     height: 93px
     position: relative
@@ -67,6 +94,10 @@ header
             display: block
             position: relative
             text-align: center
+            text-decoration: none
+            text-transform: uppercase
+            font-family: "ProximaNovaBld"
+            color: #00a651
 .content-area
     position: relative
     z-index: 15
@@ -110,3 +141,43 @@ header
     &-title__block__title
         font-family: "ProximaNovaLight"
         font-size: 24px
+.cards
+    &-item
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: space-around
+        border: 1px solid #5d5656
+        height: 200px
+        border-radius: 10px
+        background-color: #fff
+        padding: 20px 0
+        transition: .2s
+        &:hover
+            -webkit-box-shadow: 0px 0px 20px 0px rgba(117, 53, 168, 0.75)
+            -moz-box-shadow:    0px 0px 20px 0px rgba(117, 53, 168, 0.75)
+            box-shadow:         0px 0px 20px 0px rgba(117, 53, 168, 0.75)
+            transform: scale(1.03, 1.03)
+        &__img
+            width: 92px 
+        &__text
+            display: flex
+            flex-direction: column
+            height: 100%
+            width: 50%
+            justify-content: space-between
+            &__title
+                font-family: "ProximaNovaBld"
+                font-size: 20px
+            &__descr
+                color: #5d5656
+                font-family: "ProximaNovaLight"
+                font-size: 14px
+            &__link
+            &__price
+                font-size: 18px
+                color: #bb23af
+            &__button
+                text-decoration: none
+                font-family: "ProximaNovaBld"
+                color: #00a651
