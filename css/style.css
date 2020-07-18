@@ -58,7 +58,7 @@ body {
 .main-bg__block {
   background: url("../img/main-bg.png") no-repeat;
   background-size: cover;
-  height: 2500px;
+  height: 5000px;
   width: 100%;
   position: relative;
   z-index: 15;
@@ -92,7 +92,7 @@ body {
 }
 
 .section__title {
-  font-size: 36px;
+  font-size: 32px;
 }
 
 .section__title-wrap {
@@ -221,7 +221,7 @@ header {
 
 .first-screen__h1 {
   color: #ffff;
-  font-size: 56px;
+  font-size: 66px;
   font-family: "ProximaNovaExtraBld";
 }
 
@@ -236,9 +236,44 @@ header {
   text-align: center;
 }
 
-.form__section-title__block__title {
-  font-family: "ProximaNovaLight";
-  font-size: 24px;
+.form__section-container {
+  border-radius: 10px;
+  border: 1px solid #bb23af;
+  height: 320px;
+  width: 90%;
+  margin: auto;
+  background-color: #fff;
+}
+
+.form__section-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  min-height: 320px;
+}
+
+.form__section-item__img {
+  width: auto;
+  height: 200px;
+}
+
+.form__section-item__step__title {
+  color: #bb23af;
+  font-size: 28px;
+}
+
+.form__section-item__price {
+  color: #bb23af;
+  font-size: 28px;
 }
 
 .cards-item {
@@ -261,6 +296,7 @@ header {
   padding: 20px 0;
   -webkit-transition: .2s;
   transition: .2s;
+  margin-bottom: 30px;
 }
 
 .cards-item:hover {

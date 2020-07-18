@@ -4,3 +4,52 @@ var scene = document.getElementById('scene');
 var parallaxInstance = new Parallax(scene, {
     relativeInput: false
 });
+
+Vue.component('step-item', {
+    template: `
+    <div class="col-md-4">
+    <div class="form__section-item">
+        <div class = "form__section-item__step__title bold" >Шаг {{ item.id }} ></div>
+        <a href = "" class = "form__section-item__select__btn" >{{ selectBtnText }}</a>
+        <img v-bind:src="item.img" alt="" class="form__section-item__img">
+        <div class = "form__section-item__colors" ></div>
+        <div class = "form__section-item__step__btn"> </div>
+        <div class = "form__section-item__price bold" >{{ item.price }} руб.</div></div></div>`,
+    props: {
+        item: Object
+    },
+    computed: {
+        selectBtnText: function() {
+            if (this.item.id === 1) {
+                return 'Выбрать другой шаблон'
+            } else if (this.item.id === 2) {
+                return 'Выбрать другую оснастку'
+            }
+        }
+    }
+})
+
+var formApp = new Vue({
+    el: '#form-app',
+    data: {
+        items: [{
+                id: 1,
+                img: 'img/form/shtamp-blue.png',
+                colors: [],
+                price: 500
+            },
+            {
+                id: 2,
+                img: 'img/form/avtomaticheskaya-osnastka-blue.png',
+                colors: [],
+                price: 400
+            }
+        ]
+    },
+    methods: {
+
+    },
+    computed: {
+
+    }
+});

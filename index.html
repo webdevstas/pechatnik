@@ -132,7 +132,20 @@
             </section>
             <section class="form__section">
                 <div class="container">
-                    <div class="form__section-title__block">
+                    <div class="section__title-wrap">
+                        <p class="section__title light">
+                            <span class="section__title-bordered bold">НЕ НАДО НИКУДА ИДТИ </span>ЗАПОЛНИТЕ ФОРМУ
+                        </p>
+                        <p class="section__title-descr">
+                            Мы придумали эту форму заявки специально для Вас, не нужно никуда идти, просто заполняете форму, производите оплату и мы доставим печать
+                        </p>
+                    </div>
+                    <div class="form__section-container">
+                        <div id="form-app">
+                            <div class="row">
+                                <step-item v-for='item in items' :key=item.id :item=item></step-item>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -188,11 +201,53 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="cards-item">
+                                <img src="img/cards/pechat-ooo.png" alt="" class="cards-item__img">
+                                <div class="cards-item__text">
+                                    <div class="cards-item__text__title">Печать ООО</div>
+                                    <div class="cards-item__text__descr">Изготавливается для только что зарегистрированного юр. лица или при изменении реквизитов.</div>
+                                    <a href="" class="cards-item__text__link">узнать больше...</a>
+                                    <div class="horizontal-flex">
+                                        <div class="cards-item__text__price">500 руб.</div>
+                                        <a href="" class="cards-item__text__button">ЗАКАЗАТЬ</a> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="cards-item">
+                                <img src="img/cards/pechat-IP.png" alt="" class="cards-item__img">
+                                <div class="cards-item__text">
+                                    <div class="cards-item__text__title">Печать ИП</div>
+                                    <div class="cards-item__text__descr">Изготавливается для только что зарегистрированного юр.</div>
+                                    <a href="" class="cards-item__text__link">узнать больше...</a>
+                                    <div class="horizontal-flex">
+                                        <div class="cards-item__text__price">500 руб.</div>
+                                        <a href="" class="cards-item__text__button">ЗАКАЗАТЬ</a> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="cards-item">
+                                <img src="img/cards/pechat-vrach.png" alt="" class="cards-item__img">
+                                <div class="cards-item__text">
+                                    <div class="cards-item__text__title">Печать Врача</div>
+                                    <div class="cards-item__text__descr">Изготавливается для только что..</div>
+                                    <a href="" class="cards-item__text__link">узнать больше...</a>
+                                    <div class="horizontal-flex">
+                                        <div class="cards-item__text__price">350 руб.</div>
+                                        <a href="" class="cards-item__text__button">ЗАКАЗАТЬ</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
     </section>
-
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/particles.min.js"></script>
     <script src="js/parallax.min.js"></script>
     <script src="js/script.js"></script>
