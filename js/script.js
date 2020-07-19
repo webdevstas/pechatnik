@@ -9,22 +9,47 @@ Vue.component('step-item', {
     template: `
     <div class="col-md-4">
     <div class="form__section-item">
-        <div class = "form__section-item__step__title bold" >Шаг {{ item.id }} ></div>
-        <a href = "" class = "form__section-item__select__btn" >{{ selectBtnText }}</a>
-        <img v-bind:src="item.img" alt="" class="form__section-item__img">
-        <div class = "form__section-item__colors" ></div>
-        <div class = "form__section-item__step__btn"> </div>
-        <div class = "form__section-item__price bold" >{{ item.price }} руб.</div></div></div>`,
+        <div class="form__section-item__step__title bold">Шаг {{ step.id }} ></div>
+        <a href="" class="form__section-item__select__btn" v-on:click=modalOpen>{{ selectBtnText }}</a>
+        <img v-bind:src="step.defImg" alt="" class="form__section-item__img">
+        <div class="form__section-item__colors"></div>
+        <div class="form__section-item__step__btn"> </div>
+        <div class="form__section-item__price bold">{{ step.price }} руб.</div>
+    </div>
+    <div v-if=isModalOpened id="modal-win">
+        <span class="close-modal" v-on:click=modalClose>Закрыть</span>
+        <ul class="modal-list">
+            <li v-for='variant in step.variants' class="modal-list__item"><img class="modal-list__item__img" :src=variant.img alt=""></li>
+        </ul>
+    </div>
+</div>
+        `,
     props: {
-        item: Object
+        step: Object
+    },
+    data: function() {
+        return {
+            isModalOpened: false
+        }
     },
     computed: {
         selectBtnText: function() {
-            if (this.item.id === 1) {
+            if (this.step.id === 1) {
                 return 'Выбрать другой шаблон'
-            } else if (this.item.id === 2) {
+            } else if (this.step.id === 2) {
                 return 'Выбрать другую оснастку'
             }
+        }
+    },
+    methods: {
+        modalOpen: function(e) {
+            e.preventDefault();
+            this.isModalOpened = true;
+            document.body.style.overflow = 'hidden';
+        },
+        modalClose: function(e) {
+            this.isModalOpened = false;
+            document.body.style.overflow = 'auto';
         }
     }
 })
@@ -32,15 +57,37 @@ Vue.component('step-item', {
 var formApp = new Vue({
     el: '#form-app',
     data: {
-        items: [{
+        formSteps: [{
                 id: 1,
-                img: 'img/form/shtamp-blue.png',
+                defImg: 'img/form/shtamp-blue.png',
+                variants: [{
+                        id: 1,
+                        img: 'img/form/shtamp-red.png',
+                        price: null
+                    },
+                    {
+                        id: 2,
+                        img: 'img/form/shtamp-black.png',
+                        price: null
+                    }
+                ],
                 colors: [],
                 price: 500
             },
             {
                 id: 2,
-                img: 'img/form/avtomaticheskaya-osnastka-blue.png',
+                defImg: 'img/form/avtomaticheskaya-osnastka-blue.png',
+                variants: [{
+                        id: 1,
+                        img: 'img/form/avtomaticheskaya-osnastka-red.png',
+                        price: null
+                    },
+                    {
+                        id: 2,
+                        img: 'img/form/avtomaticheskaya-osnastka-black.png',
+                        price: null
+                    }
+                ],
                 colors: [],
                 price: 400
             }

@@ -51,6 +51,25 @@ body
     flex-direction: row
     align-items: center
     justify-content: space-between
+#modal-win
+    height: 80%
+    width: 90%
+    position: fixed
+    background-color: #f0f0f0
+    border-radius: 10px
+    left: 50%
+    top: 50%
+    margin: auto
+    transform: translateX(-50%) translateY(-50%)
+    overflow: auto
+    z-index: 1000
+.close-modal 
+    display: block
+    cursor: pointer
+    width: 100%
+    text-align: right
+    padding-right: 20px
+    padding-top: 10px
 .section__title
     font-size: 32px
     &-wrap
@@ -163,7 +182,22 @@ header
             font-size: 28px
         &__price
             color: #bb23af
-            font-size: 28px        
+            font-size: 28px      
+.modal-list
+    list-style: none
+    display: flex
+    flex-direction: row
+    width: 100%
+    flex-wrap: wrap
+    &__item
+        &__img
+            height: 200px
+            width: auto
+            margin: 5px
+            cursor: pointer
+            transition: .2s
+            &:hover
+                transform: translateY(-5px)
 .cards
     &-item
         display: flex

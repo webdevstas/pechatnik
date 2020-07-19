@@ -91,6 +91,30 @@ body {
           justify-content: space-between;
 }
 
+#modal-win {
+  height: 80%;
+  width: 90%;
+  position: fixed;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  left: 50%;
+  top: 50%;
+  margin: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  overflow: auto;
+  z-index: 1000;
+}
+
+.close-modal {
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  text-align: right;
+  padding-right: 20px;
+  padding-top: 10px;
+}
+
 .section__title {
   font-size: 32px;
 }
@@ -274,6 +298,34 @@ header {
 .form__section-item__price {
   color: #bb23af;
   font-size: 28px;
+}
+
+.modal-list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.modal-list__item__img {
+  height: 200px;
+  width: auto;
+  margin: 5px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.modal-list__item__img:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 
 .cards-item {
