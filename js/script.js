@@ -11,15 +11,15 @@ Vue.component('step-item', {
     <div class="form__section-item">
         <div class="form__section-item__step__title bold">Шаг {{ step.id }} ></div>
         <a href="" class="form__section-item__select__btn" v-on:click=modalOpen>{{ selectBtnText }}</a>
-        <img v-bind:src="step.defImg" alt="" class="form__section-item__img">
+        <img v-bind:src="curVariant.img" alt="" class="form__section-item__img">
         <div class="form__section-item__colors"></div>
         <div class="form__section-item__step__btn"> </div>
-        <div class="form__section-item__price bold">{{ step.price }} руб.</div>
+        <div class="form__section-item__price bold">{{ curVariant.price }} руб.</div>
     </div>
     <div v-if=isModalOpened id="modal-win">
         <span class="close-modal" v-on:click=modalClose>Закрыть</span>
         <ul class="modal-list">
-            <li v-for='variant in step.variants' class="modal-list__item"><img class="modal-list__item__img" :src=variant.img alt=""></li>
+            <li v-for='variant in step.variants' class="modal-list__item"><img class="modal-list__item__img" :src=variant.img alt="" @click=selectVariant(variant)></li>
         </ul>
     </div>
 </div>
@@ -29,7 +29,8 @@ Vue.component('step-item', {
     },
     data: function() {
         return {
-            isModalOpened: false
+            isModalOpened: false,
+            curVariant: this.step.variants[0]
         }
     },
     computed: {
@@ -50,6 +51,10 @@ Vue.component('step-item', {
         modalClose: function(e) {
             this.isModalOpened = false;
             document.body.style.overflow = 'auto';
+        },
+        selectVariant: function(variant) {
+            this.curVariant = variant;
+            this.modalClose();
         }
     }
 })
@@ -59,16 +64,20 @@ var formApp = new Vue({
     data: {
         formSteps: [{
                 id: 1,
-                defImg: 'img/form/shtamp-blue.png',
                 variants: [{
                         id: 1,
                         img: 'img/form/shtamp-red.png',
-                        price: null
+                        price: 100
                     },
                     {
                         id: 2,
                         img: 'img/form/shtamp-black.png',
-                        price: null
+                        price: 200
+                    },
+                    {
+                        id: 3,
+                        img: 'img/form/shtamp-blue.png',
+                        price: 300
                     }
                 ],
                 colors: [],
@@ -76,16 +85,20 @@ var formApp = new Vue({
             },
             {
                 id: 2,
-                defImg: 'img/form/avtomaticheskaya-osnastka-blue.png',
                 variants: [{
                         id: 1,
                         img: 'img/form/avtomaticheskaya-osnastka-red.png',
-                        price: null
+                        price: 100
                     },
                     {
                         id: 2,
                         img: 'img/form/avtomaticheskaya-osnastka-black.png',
-                        price: null
+                        price: 200
+                    },
+                    {
+                        id: 3,
+                        img: 'img/form/avtomaticheskaya-osnastka-blue.png',
+                        price: 300
                     }
                 ],
                 colors: [],
