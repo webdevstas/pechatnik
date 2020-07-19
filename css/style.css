@@ -263,7 +263,7 @@ header {
 .form__section-container {
   border-radius: 10px;
   border: 1px solid #bb23af;
-  height: 320px;
+  height: 350px;
   width: 90%;
   margin: auto;
   background-color: #fff;
@@ -282,7 +282,7 @@ header {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  min-height: 320px;
+  min-height: 350px;
 }
 
 .form__section-item__img {
@@ -298,6 +298,22 @@ header {
 .form__section-item__price {
   color: #bb23af;
   font-size: 28px;
+}
+
+.form__section-item__colors__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.form__section-item__colors__list__item {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .modal-list {

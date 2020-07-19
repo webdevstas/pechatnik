@@ -11,9 +11,14 @@ Vue.component('step-item', {
     <div class="form__section-item">
         <div class="form__section-item__step__title bold">Шаг {{ step.id }} ></div>
         <a href="" class="form__section-item__select__btn" v-on:click=modalOpen>{{ selectBtnText }}</a>
-        <img v-bind:src="curVariant.img" alt="" class="form__section-item__img">
+        <img v-bind:src="curColor" alt="" class="form__section-item__img">
         <div class="form__section-item__colors"></div>
-        <div class="form__section-item__step__btn"> </div>
+        <div class="form__section-item__step__btn"></div>
+        <div class="form__section-item__colors">
+            <ul class="form__section-item__colors__list">
+                <li class="form__section-item__colors__list__item" v-for="color in curVariant.colors" :style="{backgroundColor: color.name}" @click="selectColor(color)"></li>
+            </ul>
+        </div>
         <div class="form__section-item__price bold">{{ curVariant.price }} руб.</div>
     </div>
     <div v-if=isModalOpened id="modal-win">
@@ -30,7 +35,8 @@ Vue.component('step-item', {
     data: function() {
         return {
             isModalOpened: false,
-            curVariant: this.step.variants[0]
+            curVariant: this.step.variants[0],
+            curColor: this.step.variants[0].colors[0].img
         }
     },
     computed: {
@@ -55,6 +61,9 @@ Vue.component('step-item', {
         selectVariant: function(variant) {
             this.curVariant = variant;
             this.modalClose();
+        },
+        selectColor: function(color) {
+            this.curColor = color.img;
         }
     }
 })
@@ -65,43 +74,56 @@ var formApp = new Vue({
         formSteps: [{
                 id: 1,
                 variants: [{
-                        id: 1,
-                        img: 'img/form/shtamp-red.png',
-                        price: 100
-                    },
-                    {
-                        id: 2,
-                        img: 'img/form/shtamp-black.png',
-                        price: 200
-                    },
-                    {
-                        id: 3,
-                        img: 'img/form/shtamp-blue.png',
-                        price: 300
-                    }
-                ],
-                colors: [],
-                price: 500
+                    id: 1,
+                    img: 'img/form/shtamp-red.png',
+                    price: 100,
+                    colors: [{
+                            id: 1,
+                            code: 'red',
+                            name: 'red',
+                            img: 'img/form/shtamp-red.png'
+                        },
+                        {
+                            id: 2,
+                            code: 'black',
+                            name: 'black',
+                            img: 'img/form/shtamp-black.png'
+                        },
+                        {
+                            id: 3,
+                            code: 'blue',
+                            name: 'blue',
+                            img: 'img/form/shtamp-blue.png'
+                        }
+                    ]
+                }],
             },
             {
                 id: 2,
                 variants: [{
-                        id: 1,
-                        img: 'img/form/avtomaticheskaya-osnastka-red.png',
-                        price: 100
-                    },
-                    {
-                        id: 2,
-                        img: 'img/form/avtomaticheskaya-osnastka-black.png',
-                        price: 200
-                    },
-                    {
-                        id: 3,
-                        img: 'img/form/avtomaticheskaya-osnastka-blue.png',
-                        price: 300
-                    }
-                ],
-                colors: [],
+                    id: 1,
+                    img: 'img/form/avtomaticheskaya-osnastka-red.png',
+                    price: 100,
+                    colors: [{
+                            id: 1,
+                            code: 'red',
+                            name: 'red',
+                            img: 'img/form/avtomaticheskaya-osnastka-red.png'
+                        },
+                        {
+                            id: 2,
+                            code: 'black',
+                            name: 'black',
+                            img: 'img/form/avtomaticheskaya-osnastka-black.png'
+                        },
+                        {
+                            id: 3,
+                            code: 'blue',
+                            name: 'blue',
+                            img: 'img/form/avtomaticheskaya-osnastka-blue.png'
+                        }
+                    ]
+                }],
                 price: 400
             }
         ]
