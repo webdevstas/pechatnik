@@ -140,10 +140,24 @@
                             Мы придумали эту форму заявки специально для Вас, не нужно никуда идти, просто заполняете форму, производите оплату и мы доставим печать
                         </p>
                     </div>
-                    <div class="form__section-container">
-                        <div id="form-app">
+                    <div id="form-app">
+                        <div class="form__section-container">
                             <div class="row">
-                                <step-item v-for='step in formSteps' :key=step.id :step=step></step-item>
+                                <step-item v-for='step in formSteps' :key=step.id :step=step @changed-data="prepareData"></step-item>
+                                <div class="col-md-4">
+                                    <div class="form__section-item__step__title bold">Шаг 3</div>
+                                    <div id="form" class="form__section-form">
+                                        <label for="" class="form__section-form__label">*Введите название ООО</label>
+                                        <input type="text" class="form__section-form__input">
+                                        <label for="" class="form__section-form__label">*Введите ОГРН</label>
+                                        <input type="text" class="form__section-form__input">
+                                        <label for="" class="form__section-form__label">*Введите название города</label>
+                                        <input type="text" class="form__section-form__input">
+                                        <label for="" class="form__section-form__label">*Введите адрес доставки</label>
+                                        <input type="text" class="form__section-form__input">
+                                        <label for="" class="form__section-form__label">* Просьба перед покупкой ознакомиться с условиями оплаты и доставки </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -242,6 +256,18 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+            <section class="economy">
+                <div class="container">
+                    <div class="section__title-wrap white-text">
+                        <p class="section__title light">
+                            <span class="section__title-bordered bold">НОВЫЕ ПЕЧАТИ </span>И ОТРИСОВКА СТАРЫХ
+                        </p>
+                        <p class="section__title-descr">
+                            У нас на сайте Вы можете подобрать интересующий товар в каталоге
+                        </p>
                     </div>
                 </div>
             </section>
