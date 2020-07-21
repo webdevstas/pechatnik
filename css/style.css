@@ -115,6 +115,10 @@ body {
   padding-top: 10px;
 }
 
+.color-active {
+  border: 3px solid green;
+}
+
 .section__title {
   font-size: 32px;
 }
