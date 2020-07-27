@@ -32,8 +32,8 @@ body
 .regular
     font-family: "ProximaNovaReg"
 .main-bg__block
-    background: url("../img/main-bg.png") no-repeat
-    background-size: cover
+    // background: url("../img/main-bg.png") no-repeat
+    // background-size: cover
     height: 5000px
     width: 100%
     position: relative
@@ -77,6 +77,7 @@ body
     text-shadow: 0px 0px 10px rgba(117, 53, 168, 0.75)
 .section__title
     font-size: 32px
+    text-transform: uppercase
     &-wrap
         margin-bottom: 50px
     &-bordered
@@ -87,7 +88,8 @@ body
         display: block
         color: #bb23af
     &-descr
-        font-size: 16px        
+        font-size: 16px
+        max-width: 30%      
 header
     height: 93px
     position: relative
@@ -146,7 +148,10 @@ header
 #scene
     width: 100%
 .first-screen
-    min-height: 500px
+    min-height: 700px
+    background: url("../img/head_bg.png") no-repeat
+    background-size: cover
+    width: 100%
     &__patallax__container
             
         &_first__layer
@@ -165,6 +170,7 @@ header
     &__arrow
         width: 100%
         text-align: center
+        margin-top: 30px    
 .form__section
     &-container
         border-radius: 10px
@@ -270,3 +276,40 @@ header
                 text-decoration: none
                 font-family: "ProximaNovaBld"
                 color: #00a651
+.economy
+    background: url('../img/middle_bg.png') no-repeat
+    min-height: 900px
+    background-size: cover
+    // background-position: bottom
+    padding-top: 50px
+    &-title
+        text-align: center
+        font-size: 26px
+        color: #fff
+        text-transform: uppercase
+        margin: 50px 0
+    &-percent__item
+        color: #fff
+        &__num
+            font-size: 66px
+        &__descr
+            font-size: 18px
+    &-icon__block
+        display: flex
+        margin-bottom: 50px
+        flex-direction: row
+        align-items: center
+        justify-content: space-around
+        &__img
+            width: 50%
+            &__wrap
+                width: 30%
+                text-align: center
+
+        &__text
+            color:#fff
+            width: 70%
+            &__title
+
+            &__descr
+                

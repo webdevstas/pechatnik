@@ -56,8 +56,6 @@ body {
 }
 
 .main-bg__block {
-  background: url("../img/main-bg.png") no-repeat;
-  background-size: cover;
   height: 5000px;
   width: 100%;
   position: relative;
@@ -126,6 +124,7 @@ body {
 
 .section__title {
   font-size: 32px;
+  text-transform: uppercase;
 }
 
 .section__title-wrap {
@@ -145,6 +144,7 @@ body {
 
 .section__title-descr {
   font-size: 16px;
+  max-width: 30%;
 }
 
 header {
@@ -249,7 +249,10 @@ header {
 }
 
 .first-screen {
-  min-height: 500px;
+  min-height: 700px;
+  background: url("../img/head_bg.png") no-repeat;
+  background-size: cover;
+  width: 100%;
 }
 
 .first-screen__h1 {
@@ -267,6 +270,7 @@ header {
 .first-screen__arrow {
   width: 100%;
   text-align: center;
+  margin-top: 30px;
 }
 
 .form__section-container {
@@ -449,5 +453,62 @@ header {
   text-decoration: none;
   font-family: "ProximaNovaBld";
   color: #00a651;
+}
+
+.economy {
+  background: url("../img/middle_bg.png") no-repeat;
+  min-height: 900px;
+  background-size: cover;
+  padding-top: 50px;
+}
+
+.economy-title {
+  text-align: center;
+  font-size: 26px;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 50px 0;
+}
+
+.economy-percent__item {
+  color: #fff;
+}
+
+.economy-percent__item__num {
+  font-size: 66px;
+}
+
+.economy-percent__item__descr {
+  font-size: 18px;
+}
+
+.economy-icon__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 50px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.economy-icon__block__img {
+  width: 50%;
+}
+
+.economy-icon__block__img__wrap {
+  width: 30%;
+  text-align: center;
+}
+
+.economy-icon__block__text {
+  color: #fff;
+  width: 70%;
 }
 /*# sourceMappingURL=style.css.map */

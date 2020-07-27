@@ -90,7 +90,8 @@ Vue.component('step-item', {
 var formApp = new Vue({
     el: '#form-app',
     data: {
-        concatData: [],
+        firstStepResult: {},
+        secondStepResult: {},
         formSteps: [{
                 id: 1,
                 variants: [{
@@ -148,12 +149,18 @@ var formApp = new Vue({
         ]
     },
     methods: {
-        prepareData: function(data) {
-            this.concatData.push(data);
-            console.log(this.concatData);
+        firstStepData: function(data) {
+            this.firstStepResult = data;
+        },
+        secondStepData: function(data) {
+            this.secondStepResult = data;
         }
     },
     computed: {
-
+        totalPrice: function() {
+            if (this.firstStepResult.price && this.secondStepResult.price) {
+                return this.firstStepResult.price + this.secondStepResult.price;
+            } else return this.formSteps[0].variants[0].price + this.formSteps[1].variants[0].price
+        }
     }
 });

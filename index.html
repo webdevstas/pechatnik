@@ -54,44 +54,42 @@
     <section class="main-bg__block">
         <div id="particles-js"></div>
         <div class="content-area">
-            <div class="container">
-                <div class="top-menu">
-                    <ul class="top-menu__list">
-                        <li class="top-menu__list__item">
-                            <a href="" class="top-menu__list__item__link">Главная</a>
-                        </li>
-                        <li class="top-menu__list__item">
-                            <a href="" class="top-menu__list__item__link">Изготовление</a>
-                        </li>
-                        <li class="top-menu__list__item">
-                            <a href="" class="top-menu__list__item__link">Оснастки</a>
-                        </li>
-                        <li class="top-menu__list__item">
-                            <a href="" class="top-menu__list__item__link">Образцы печатей и штампов</a>
-                        </li>
-                        <li class="top-menu__list__item">
-                            <a href="" class="top-menu__list__item__link">Сроки изготовления</a>
-                        </li>
-                        <li class="top-menu__list__item">
-                            <a href="" class="top-menu__list__item__link">Доставка</a>
-                        </li>
-                        <li class="top-menu__list__item">
-                            <a href="" class="top-menu__list__item__link">Цены</a>
-                        </li>
-                        <li class="top-menu__list__item">
-                            <a href="" class="top-menu__list__item__link">Акции</a>
-                        </li>
-                        <li class="top-menu__list__item">
-                            <a href="" class="top-menu__list__item__link">О компании</a>
-                        </li>
-                        <li class="top-menu__list__item">
-                            <a href="" class="top-menu__list__item__link">Контакты</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
             <section class="first-screen">
                 <div class="container">
+                    <div class="top-menu">
+                        <ul class="top-menu__list">
+                            <li class="top-menu__list__item">
+                                <a href="" class="top-menu__list__item__link">Главная</a>
+                            </li>
+                            <li class="top-menu__list__item">
+                                <a href="" class="top-menu__list__item__link">Изготовление</a>
+                            </li>
+                            <li class="top-menu__list__item">
+                                <a href="" class="top-menu__list__item__link">Оснастки</a>
+                            </li>
+                            <li class="top-menu__list__item">
+                                <a href="" class="top-menu__list__item__link">Образцы печатей и штампов</a>
+                            </li>
+                            <li class="top-menu__list__item">
+                                <a href="" class="top-menu__list__item__link">Сроки изготовления</a>
+                            </li>
+                            <li class="top-menu__list__item">
+                                <a href="" class="top-menu__list__item__link">Доставка</a>
+                            </li>
+                            <li class="top-menu__list__item">
+                                <a href="" class="top-menu__list__item__link">Цены</a>
+                            </li>
+                            <li class="top-menu__list__item">
+                                <a href="" class="top-menu__list__item__link">Акции</a>
+                            </li>
+                            <li class="top-menu__list__item">
+                                <a href="" class="top-menu__list__item__link">О компании</a>
+                            </li>
+                            <li class="top-menu__list__item">
+                                <a href="" class="top-menu__list__item__link">Контакты</a>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="row">
                         <div class="col-md-5">
                             <h1 class="first-screen__h1">
@@ -143,7 +141,8 @@
                     <div id="form-app">
                         <div class="form__section-container">
                             <div class="row">
-                                <step-item v-for='step in formSteps' :key=step.id :step=step @changed-data="prepareData"></step-item>
+                                <step-item :step=formSteps[0] @changed-data="firstStepData"></step-item>
+                                <step-item :step=formSteps[1] @changed-data="secondStepData"></step-item>
                                 <div class="col-md-4">
                                     <div class="form__section-item__step__title bold">Шаг 3</div>
                                     <div id="form" class="form__section-form">
@@ -155,7 +154,8 @@
                                         <input type="text" class="form__section-form__input">
                                         <label for="" class="form__section-form__label">*Введите адрес доставки</label>
                                         <input type="text" class="form__section-form__input">
-                                        <label for="" class="form__section-form__label">* Просьба перед покупкой ознакомиться с условиями оплаты и доставки </label>
+                                        <label for="" class="form__section-form__label">*Просьба перед покупкой ознакомиться с условиями оплаты и доставки </label>
+                                        <div class="form__section-item__price bold">Итого: {{totalPrice}} руб.</div>
                                     </div>
                                 </div>
                             </div>
@@ -263,11 +263,102 @@
                 <div class="container">
                     <div class="section__title-wrap white-text">
                         <p class="section__title light">
-                            <span class="section__title-bordered bold">НОВЫЕ ПЕЧАТИ </span>И ОТРИСОВКА СТАРЫХ
+                            <span class="section__title-bordered bold">Экономия </span>для вас
                         </p>
                         <p class="section__title-descr">
-                            У нас на сайте Вы можете подобрать интересующий товар в каталоге
+                            Мы придумали эту форму заявки специально для Вас, не нужно никуда идти, просто заполняете форму, производите оплату и мы доставляем печать
                         </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="economy-percent__item">
+                                <div class="economy-percent__item__num extra-bold">-10%</div>
+                                <div class="economy-percent__item__descr">при заказе 3 едениц товара</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="economy-percent__item">
+                                <div class="economy-percent__item__num extra-bold">-20%</div>
+                                <div class="economy-percent__item__descr">при заказе 10 едениц товара</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="economy-percent__item">
+                                <div class="economy-percent__item__num extra-bold">-30%</div>
+                                <div class="economy-percent__item__descr">при заказе от 20 единиц товара</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="economy-title bold">Что вы получите</div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="economy-icon__block">
+                                <div class="economy-icon__block__img__wrap">
+                                    <img src="./img/icons/ikonka-garantia.png" alt="" class="economy-icon__block__img">
+                                </div>
+                                <div class="economy-icon__block__text">
+                                    <div class="economy-icon__block__text__title bold">ГАРАНТИЯ КАЧЕСТВА</div>
+                                    <p class="economy-icon__block__text__descr">Мы уверенны в качестве производимого нами товара. Поэтому даём гарантию 2 года на любое изделие</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="economy-icon__block">
+                                <div class="economy-icon__block__img__wrap">
+                                    <img src="./img/icons/ikonka-dostavka.png" alt="" class="economy-icon__block__img">
+                                </div>
+                                <div class="economy-icon__block__text">
+                                    <div class="economy-icon__block__text__title bold">ДОСТАВКА</div>
+                                    <p class="economy-icon__block__text__descr">Для Вашего удобства у нас работает бесплатная доставка по центральному району Сочи</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="economy-icon__block">
+                                <div class="economy-icon__block__img__wrap">
+                                    <img src="./img/icons/ikonka-srochno.png" alt="" class="economy-icon__block__img">
+                                </div>
+                                <div class="economy-icon__block__text">
+                                    <div class="economy-icon__block__text__title bold">СРОЧНОЕ ИЗГОТОВЛЕНИЕ</div>
+                                    <p class="economy-icon__block__text__descr">Бывают разные ситуации и мы поможем в их решении. Изгоавливаем срочные печати в течении 1 часа</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="economy-icon__block">
+                                <div class="economy-icon__block__img__wrap">
+                                    <img src="./img/icons/ikonka-legko.png" alt="" class="economy-icon__block__img">
+                                </div>
+                                <div class="economy-icon__block__text">
+                                    <div class="economy-icon__block__text__title bold">ЛЕГКО ЗАКАЗАТЬ</div>
+                                    <p class="economy-icon__block__text__descr">На нашем сайте представлена форма заявки с выбором интересующего Вас товара.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="economy-icon__block">
+                                <div class="economy-icon__block__img__wrap">
+                                    <img src="./img/icons/ikonka-stoimost.png" alt="" class="economy-icon__block__img">
+                                </div>
+                                <div class="economy-icon__block__text">
+                                    <div class="economy-icon__block__text__title bold">ЦЕНА</div>
+                                    <p class="economy-icon__block__text__descr">Мы не завышаем цены, даже в условиях кризиса</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="economy-icon__block">
+                                <div class="economy-icon__block__img__wrap">
+                                    <img src="./img/icons/ikonka-vibor.png" alt="" class="economy-icon__block__img">
+                                </div>
+                                <div class="economy-icon__block__text">
+                                    <div class="economy-icon__block__text__title bold">БОЛЬШОЙ ВЫБОР</div>
+                                    <p class="economy-icon__block__text__descr">На нашем сайте представлен большой выбор штемпельной продукции</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
