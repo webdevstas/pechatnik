@@ -158,8 +158,9 @@ var formApp = new Vue({
     },
     computed: {
         totalPrice: function() {
-            return this.firstStepResult.price + this.secondStepResult.price;
+            if (this.firstStepResult.price && this.secondStepResult.price) {
+                return this.firstStepResult.price + this.secondStepResult.price;
+            } else return this.formSteps[0].variants[0].price + this.formSteps[1].variants[0].price
         }
-
     }
 });
