@@ -278,7 +278,7 @@ header
                 color: #00a651
 .economy
     background: url('../img/middle_bg.png') no-repeat
-    min-height: 900px
+    min-height: 1010px
     background-size: cover
     // background-position: bottom
     padding-top: 50px
@@ -312,4 +312,56 @@ header
             &__title
 
             &__descr
-                
+.reverse
+    flex-direction: row-reverse !important
+    & .feedback-item__img__wrap
+        left: 85px
+.feedback
+    &-btn
+        background-image: -moz-linear-gradient( 9deg, rgb(5,166,81) 0%, rgb(25,154,86) 57%, rgb(45,142,91) 100%)
+        background-image: -webkit-linear-gradient( 9deg, rgb(5,166,81) 0%, rgb(25,154,86) 57%, rgb(45,142,91) 100%)
+        box-shadow: 0px 0px 5.3px 4.7px rgba(0, 0, 0, 0.11)
+        width: 200px
+        height: 30px
+        color: #fff
+        border: none
+        border-radius: 15px
+        text-transform: uppercase
+        text-align: center
+        cursor: pointer
+        margin-top: 30px
+    &-item
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        align-items: center
+        border: solid 2px #bb23af
+        height: 250px
+        width: 80%
+        margin: 30px auto
+        &__img__wrap
+            width: 300px
+            height: 300px
+            border-radius: 50%
+            background: center no-repeat
+            position: relative
+            left: -85px
+        &__text
+            width: 60%
+            &__title
+                font-size: 26px
+            &__date
+                color: #999999
+                margin: 10px 0
+            &__descr
+            &__stars
+                list-style: none
+                display: flex
+                flex-direction: row
+                justify-content: space-around
+                max-width: 200px
+                padding-left: 0
+                &__star
+                    &__img
+                        width: 20px
+                        height: auto

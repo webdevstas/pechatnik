@@ -457,7 +457,7 @@ header {
 
 .economy {
   background: url("../img/middle_bg.png") no-repeat;
-  min-height: 900px;
+  min-height: 1010px;
   background-size: cover;
   padding-top: 50px;
 }
@@ -510,5 +510,92 @@ header {
 .economy-icon__block__text {
   color: #fff;
   width: 70%;
+}
+
+.reverse {
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: reverse !important;
+      -ms-flex-direction: row-reverse !important;
+          flex-direction: row-reverse !important;
+}
+
+.reverse .feedback-item__img__wrap {
+  left: 85px;
+}
+
+.feedback-btn {
+  background-image: -webkit-linear-gradient(9deg, #05a651 0%, #199a56 57%, #2d8e5b 100%);
+  -webkit-box-shadow: 0px 0px 5.3px 4.7px rgba(0, 0, 0, 0.11);
+          box-shadow: 0px 0px 5.3px 4.7px rgba(0, 0, 0, 0.11);
+  width: 200px;
+  height: 30px;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.feedback-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: solid 2px #bb23af;
+  height: 250px;
+  width: 80%;
+  margin: 30px auto;
+}
+
+.feedback-item__img__wrap {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: center no-repeat;
+  position: relative;
+  left: -85px;
+}
+
+.feedback-item__text {
+  width: 60%;
+}
+
+.feedback-item__text__title {
+  font-size: 26px;
+}
+
+.feedback-item__text__date {
+  color: #999999;
+  margin: 10px 0;
+}
+
+.feedback-item__text__stars {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  max-width: 200px;
+  padding-left: 0;
+}
+
+.feedback-item__text__stars__star__img {
+  width: 20px;
+  height: auto;
 }
 /*# sourceMappingURL=style.css.map */
