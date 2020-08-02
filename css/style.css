@@ -600,7 +600,7 @@ header {
 }
 
 .footer {
-  background: url("/img/footer_bg.png") center no-repeat;
+  background: url("../img/footer_bg.png") center no-repeat;
   height: 1280px;
   background-size: cover;
   margin-top: 30px;
