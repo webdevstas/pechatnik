@@ -365,3 +365,54 @@ header
                     &__img
                         width: 20px
                         height: auto
+.footer
+    background: url('/img/footer_bg.png') center no-repeat
+    height: 1280px
+    background-size: cover
+    margin-top: 30px
+    padding-top: 50px
+    &-faq
+        &__list
+            list-style: none
+            display: flex
+            flex-direction: column
+            justify-content: center
+            width: 100%
+            align-items: center
+            &__item
+                border-radius: 50px
+                background-image: -moz-linear-gradient( -45deg, rgb(181,43,190) 0%, rgb(137,44,166) 57%, rgb(92,45,142) 100%)
+                background-image: -webkit-linear-gradient( -45deg, rgb(181,43,190) 0%, rgb(137,44,166) 57%, rgb(92,45,142) 100%)
+                color: #fff
+                padding: 10px 20px
+                margin: 2px 0
+                cursor: pointer
+                width: 80%
+                transition: 0.6s
+                &__title
+                    font-size: 20px
+                &__descr
+                    font-size: 14px
+.up-arr
+    &::before
+                        display: inline-block
+                        content: ">"
+                        transform: rotate(-90deg)
+                        margin-right: 10px
+                        transition: .6s
+.down-arr
+    &::before
+                        display: inline-block
+                        content: ">"
+                        transform: rotate(90deg)
+                        margin-right: 10px        
+                        transition: .6s
+.slide-fade-enter-active 
+    transition: all .2s ease
+
+.slide-fade-leave-active 
+    transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0)
+
+.slide-fade-enter, .slide-fade-leave-to
+    transform: translateY(-10px)
+    opacity: 0

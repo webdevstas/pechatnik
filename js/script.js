@@ -164,3 +164,42 @@ var formApp = new Vue({
         }
     }
 });
+
+// Компонет ответа
+Vue.component('faq-item', {
+    template: `<li class="footer-faq__list__item" @click="openQuest">
+    <span :class='arrStyle' class="footer-faq__list__item__title light">{{title}}</span>
+    <transition name="slide-fade">
+    <p v-show="isQuestOpen" class="footer-faq__list__item__descr"><slot></slot></p>
+    </transition>
+</li>`,
+    props: {
+        title: String
+    },
+    data: () => {
+        return {
+            isQuestOpen: false,
+        }
+    },
+    computed: {
+        arrStyle: function() {
+            return this.isQuestOpen ? 'up-arr' : 'down-arr';
+        }
+    },
+    methods: {
+        openQuest: function() {
+            this.isQuestOpen = !this.isQuestOpen;
+        }
+    }
+});
+
+// Корень экземпляра faq
+var faqApp = new Vue({
+    el: '#faq-app',
+    data: {
+        title: ""
+    },
+    computed: {
+
+    }
+})
