@@ -4,9 +4,9 @@ var scene = document.getElementById('scene');
 var parallaxInstance = new Parallax(scene, {
     relativeInput: false
 });
-
+// Компонент шага формы
 Vue.component('step-item', {
-    template: `
+        template: `
     <div class="col-md-4">
     <div class="form__section-item">
         <div class="form__section-item__step__title bold">Шаг {{ step.id }} ></div>
@@ -29,64 +29,64 @@ Vue.component('step-item', {
     </div>
 </div>
         `,
-    props: {
-        step: Object
-    },
-    data: function() {
-        return {
-            isModalOpened: false,
-            curVariant: this.step.variants[0],
-            curColor: this.step.variants[0].colors[0]
-        }
-    },
-    computed: {
-        selectBtnText: function() {
-            if (this.step.id === 1) {
-                return 'Выбрать другой шаблон'
-            } else if (this.step.id === 2) {
-                return 'Выбрать другую оснастку'
+        props: {
+            step: Object
+        },
+        data: function() {
+            return {
+                isModalOpened: false,
+                curVariant: this.step.variants[0],
+                curColor: this.step.variants[0].colors[0]
             }
         },
-        resultData: function() {
-            let data = {
-                stepId: this.step.id,
-                variantId: this.curVariant.id,
-                color: this.curColor.name,
-                price: this.curVariant.price
-            };
-            return data;
-        }
-    },
-    methods: {
-        modalOpen: function(e) {
-            e.preventDefault();
-            this.isModalOpened = true;
-            document.body.style.overflow = 'hidden';
-        },
-        modalClose: function() {
-            this.isModalOpened = false;
-            document.body.style.overflow = 'auto';
-        },
-        selectVariant: function(variant) {
-            this.curVariant = variant;
-            this.modalClose();
-        },
-        selectColor: function(color, event) {
-            var chls = event.target.parentElement.children;
-            for (var i = 0; i < chls.length; i++) {
-                chls[i].classList.remove("color-active");
+        computed: {
+            selectBtnText: function() {
+                if (this.step.id === 1) {
+                    return 'Выбрать другой шаблон'
+                } else if (this.step.id === 2) {
+                    return 'Выбрать другую оснастку'
+                }
+            },
+            resultData: function() {
+                let data = {
+                    stepId: this.step.id,
+                    variantId: this.curVariant.id,
+                    color: this.curColor.name,
+                    price: this.curVariant.price
+                };
+                return data;
             }
-            this.curColor = color;
-            event.target.classList.add("color-active");
-        }
-    },
-    watch: {
-        resultData() {
-            this.$emit('changed-data', this.resultData);
-        }
-    },
-})
-
+        },
+        methods: {
+            modalOpen: function(e) {
+                e.preventDefault();
+                this.isModalOpened = true;
+                document.body.style.overflow = 'hidden';
+            },
+            modalClose: function() {
+                this.isModalOpened = false;
+                document.body.style.overflow = 'auto';
+            },
+            selectVariant: function(variant) {
+                this.curVariant = variant;
+                this.modalClose();
+            },
+            selectColor: function(color, event) {
+                var chls = event.target.parentElement.children;
+                for (var i = 0; i < chls.length; i++) {
+                    chls[i].classList.remove("color-active");
+                }
+                this.curColor = color;
+                event.target.classList.add("color-active");
+            }
+        },
+        watch: {
+            resultData() {
+                this.$emit('changed-data', this.resultData);
+            }
+        },
+    })
+    // Корневой для формы
 var formApp = new Vue({
     el: '#form-app',
     data: {
@@ -188,6 +188,7 @@ Vue.component('faq-item', {
     },
     methods: {
         openQuest: function() {
+            this.$emit('opened');
             this.isQuestOpen = !this.isQuestOpen;
         }
     }
@@ -197,9 +198,16 @@ Vue.component('faq-item', {
 var faqApp = new Vue({
     el: '#faq-app',
     data: {
-        title: ""
+        items_arr: []
     },
     computed: {
 
+    },
+    methods: {
+        closeOther: function() {
+            for (var i = 0; i < this.$children.length; i++) {
+                this.$children[i].isQuestOpen = false;
+            }
+        }
     }
 })
