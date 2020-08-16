@@ -607,6 +607,10 @@ header {
   padding-top: 50px;
 }
 
+.footer-logo {
+  text-align: center;
+}
+
 .footer-faq__list {
   list-style: none;
   display: -webkit-box;
@@ -641,6 +645,109 @@ header {
 
 .footer-faq__list__item__descr {
   font-size: 14px;
+}
+
+.footer-main {
+  position: absolute;
+  bottom: 95px;
+  width: 100%;
+  height: 400px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.footer-main__col__title {
+  font-size: 20px;
+  text-transform: uppercase;
+  display: block;
+  min-height: 70px;
+}
+
+.footer-main__menu__list {
+  list-style-image: url("../img/icons/list-image.png");
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 0;
+}
+
+.footer-main__menu__list__item a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-main__contacts {
+  height: 100%;
+}
+
+.footer-main__contacts__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.footer-main__contacts__item__img {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-main__contacts__item__text {
+  margin-left: 10px;
+}
+
+.footer-main__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 220px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.footer-main__form a {
+  color: #fff;
+}
+
+.footer-main__form input {
+  border-radius: 20px;
+  border: none;
+  padding: 5px;
+}
+
+.footer-main__form__wrap {
+  width: 100%;
+  border: 1px #fff solid;
+  min-height: 350px;
+  border-radius: 10px;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.footer-main__form__btn {
+  margin: 0;
 }
 
 .up-arr::before {
