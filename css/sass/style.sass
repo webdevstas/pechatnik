@@ -138,7 +138,9 @@ header
         align-items: center
         justify-content: space-between
         list-style: none
+        flex-wrap: wrap
         &__item
+            margin: 4px
             &__link
                 color: #ffffff
                 text-transform: uppercase
@@ -210,7 +212,6 @@ header
         display: flex
         flex-direction: column
         justify-content: space-around
-        height: 75%
         width: 70%
         margin: auto
         &__label
@@ -381,6 +382,7 @@ header
             justify-content: center
             width: 100%
             align-items: center
+            // position: absolute
             &__item
                 border-radius: 50px
                 background-image: -moz-linear-gradient( -45deg, rgb(181,43,190) 0%, rgb(137,44,166) 57%, rgb(92,45,142) 100%)
@@ -473,3 +475,39 @@ header
 .slide-fade-enter, .slide-fade-leave-to
     transform: translateY(-10px)
     opacity: 0
+
+//adaptive
+@media (max-width: 1200px)
+    .header-col__block
+        flex-direction: column
+@media (max-width: 992px)
+    .form__section-container
+        height: auto
+        width: 100%
+        padding: 20px
+    .form__section-form
+        width: 100%
+    header 
+        height: auto
+    .header-col__block__icons
+        text-align: center
+    .economy
+        background: #650aaf
+    .feedback-item
+        width: 100%
+    .footer-faq__list__item
+        width: 100%
+    .footer
+       background: #dbdbdb 
+       height: 1600px
+    .footer-main
+        bottom: 0
+        height: auto
+        background: #650aaf
+        padding-top: 40px
+        padding-bottom: 40px      
+    .footer-main__contacts  
+        height: auto
+@media (max-width: 768px)
+    .footer
+       height: 1900px

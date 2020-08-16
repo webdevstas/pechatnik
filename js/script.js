@@ -189,7 +189,7 @@ Vue.component('faq-item', {
     methods: {
         openQuest: function() {
             this.$emit('opened');
-            this.isQuestOpen = !this.isQuestOpen;
+            this.isQuestOpen = true;
         }
     }
 });
