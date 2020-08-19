@@ -755,6 +755,20 @@ header {
   margin: 0;
 }
 
+.footer-copyright {
+  width: 100%;
+  border-top: solid 1px #fff;
+  position: absolute;
+  bottom: 25px;
+  text-align: center;
+  color: #fff;
+  padding-top: 10px;
+}
+
+.footer-copyright__link {
+  color: #fff;
+}
+
 .up-arr::before {
   display: inline-block;
   content: ">";
@@ -826,23 +840,32 @@ header {
   }
   .footer {
     background: #dbdbdb;
-    height: 1600px;
+    height: 1400px;
   }
   .footer-main {
     bottom: 0;
-    height: auto;
-    background: #650aaf;
+    height: 700px;
+    background: #9728a4;
     padding-top: 40px;
     padding-bottom: 40px;
   }
   .footer-main__contacts {
     height: auto;
   }
+  .mobile-hide {
+    display: none;
+  }
+  .footer-copyright {
+    bottom: 0;
+  }
+  .footer-main__col__title {
+    min-height: 50px;
+  }
 }
 
 @media (max-width: 768px) {
   .footer {
-    height: 1900px;
+    height: 1500px;
   }
   .economy-percent__item {
     text-align: center;
@@ -880,7 +903,7 @@ header {
     display: none;
   }
   .footer {
-    height: 2000px;
+    height: 1600px;
   }
   .section__title-descr {
     max-width: 100%;
