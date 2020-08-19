@@ -210,6 +210,11 @@ header {
   color: #00a651;
 }
 
+.header-col__block__icons__link {
+  display: inline-block;
+  margin-right: 10px;
+}
+
 .content-area {
   position: relative;
   z-index: 15;
@@ -767,6 +772,10 @@ header {
 
 .footer-copyright__link {
   color: #fff;
+}
+
+.footer-social {
+  margin-top: 20px;
 }
 
 .up-arr::before {
