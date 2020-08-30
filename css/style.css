@@ -637,6 +637,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0 10px;
 }
 
 .footer-faq__list__item {
@@ -842,7 +843,7 @@ header {
     background: #650aaf;
   }
   .feedback-item {
-    width: 100%;
+    width: 95%;
   }
   .footer-faq__list__item {
     width: 100%;
@@ -875,6 +876,9 @@ header {
 @media (max-width: 768px) {
   .footer {
     height: 1500px;
+  }
+  .footer-main {
+    height: 745px;
   }
   .economy-percent__item {
     text-align: center;
