@@ -424,10 +424,6 @@ header {
           transform: scale(1.03, 1.03);
 }
 
-.cards-item__img {
-  width: 92px;
-}
-
 .cards-item__text {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -437,10 +433,12 @@ header {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
-  width: 50%;
+  width: 55%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  border-left: 1px solid grey;
+  padding-left: 20px;
 }
 
 .cards-item__text__title {
