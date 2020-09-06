@@ -763,10 +763,11 @@ header {
   width: 100%;
   border-top: solid 1px #fff;
   position: absolute;
-  bottom: 25px;
+  bottom: 10px;
   text-align: center;
   color: #fff;
   padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .footer-copyright__link {
