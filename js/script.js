@@ -165,13 +165,11 @@ var formApp = new Vue({
     }
 });
 
-// Компонет ответа
+// Компонет faq
 Vue.component('faq-item', {
     template: `<li class="footer-faq__list__item" @click="openQuest">
     <span :class='arrStyle' class="footer-faq__list__item__title light">{{title}}</span>
-    <transition name="slide-fade">
     <p v-show="isQuestOpen" class="footer-faq__list__item__descr"><slot></slot></p>
-    </transition>
 </li>`,
     props: {
         title: String
